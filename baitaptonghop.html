@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bài tập form</title>
+</head>
+<body>
+
+    <h1>Đăng ký thành viên</h1>
+    <br>
+    
+    <table>
+        <form action="">
+        <tr>
+            <th>Họ</th>
+            <td colspan="3">
+                <input type="text" id="ho">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4"><p id="ho.mes" style="color: red;"></p></td>
+        </tr>
+
+        <tr>
+            <th>Tên</th>
+            <td colspan="3">
+                <input type="text" id="ten">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4"><p id="ten.mes" style="color: red;"></p></td>
+        </tr>
+
+        <tr>
+            <th>Email</th>
+            <td colspan="3">
+                <input type="text" id="mail">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4"><p id="mail.mes" style="color: red;"></p></td>
+        </tr>
+
+        <tr>
+            <th>Mật khẩu</th>
+            <td colspan="3">
+                <input type="password" id="matkhau">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4"><p id="matkhau.mes" style="color: red;"></p></td>
+        </tr>
+
+        <tr>
+            <th>Ngày sinh</th>
+            <td><label for="">
+                <select name="" id="ngaysinh">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+                </label>
+            </td>
+
+            <td> <label for="">
+                <select name="" id="thangsinh">
+                    <option value="1">tháng 1</option>
+                    <option value="2">tháng 2</option>
+                    <option value="3">tháng 3</option>
+                    <option value="4">tháng4</option>
+                </select>
+                </label>
+            </td>
+
+            <td>
+                <label for="">
+                <select name="" id="namsinh">
+                    <option value="1990">1990</option>
+                    <option value="1991">1991</option>
+                    <option value="1992">1992</option>
+                    <option value="1993">1993</option>
+                </select>
+                </label>
+            </td>
+        </tr>
+
+        <tr>
+            <th>Giới tính</th>
+            <td> 
+                    <input type="radio" id="nam" name="gender" checked> nam
+            </td>
+            <td>
+                    <input type="radio" id="nu" name="gender"> nữ
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                    <input type="button" value = "đăng ký" id="dangky">
+            </td>
+        </tr>
+    </form>
+    </table>
+    
+    <script>
+        dangky = document.getElementById("dangky")
+
+        dangky.addEventListener("click", function(){
+            let ho = document.getElementById("ho").value
+            let ten = document.getElementById("ten").value
+            let hoVaTen = ho + " " +ten
+            let email = document.getElementById("mail").value
+            let matKhau = document.getElementById("matkhau").value
+            let gioiTinh = document.getElementById("nam").checked
+            let ngaySinh = document.getElementById("ngaysinh").value
+            let thangSinh = document.getElementById("thangsinh").value
+            let namSinh = document.getElementById("namsinh").value
+if (ho == ""){
+            document.getElementById("ho.mes").innerText = "vui lòng nhập họ"
+        }
+        else {
+            document.getElementById("ho.mes").innerText = ""
+        }
+if (ten ==""){
+            document.getElementById("ten.mes").innerText = "vui lòng nhập tên"
+}
+        else{
+            document.getElementById("ten.mes").innerText = ""
+        }
+
+if (email == "") {
+            document.getElementById("mail.mes").innerText = "vui lòng nhập email"
+}
+else {document.getElementById("mail.mes").innerText = ""
+}
+
+if (matKhau == "") { 
+    document.getElementById("matkhau.mes").innerText = "vui lòng nhập mật khẩu"
+    
+} else { document.getElementById("matkhau.mes").innerText = ""
+    
+}
+
+    if (gioiTinh == true) { 
+       document.write("chúc mừng anh " + hoVaTen + " đã đăng ký thành công"
+                      +"<br>" + "Họ và tên: " + hoVaTen
+                      + "<br>" + "email: " + email
+                      + "<br>" + "ngày sinh: " + ngaySinh + "/" + thangSinh + "/" + namSinh)
+    }
+    else {
+        document.write("chúc mừng chị " + hoVaTen + " đã đăng ký thành công"
+                      +"<br>" + "Họ và tên: " + hoVaTen
+                      + "<br>" + "email: " + email
+                      + "<br>" + "ngày sinh: " + ngaySinh + "/" + thangSinh + "/" + namSinh)
+    }
+        })
+    </script>
+</body>
+</html>

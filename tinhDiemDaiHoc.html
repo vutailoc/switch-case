@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bài tập tính điểm đại học khối D</title>
+</head>
+<body>
+
+    <h1>nhập điểm</h1>
+    <p>Môn Toán <input type="number" id="diemToan"></p>
+    <br>
+    <p>Môn Văn <input type="number" id="diemVan"></p>
+    <br>
+    <p>Môn Anh <input type="number" id="diemAnh"></p>
+    <br>
+    <p>Khu Vực <label for="">
+        <select name="" id="khuVuc">
+            <option value="kv1">KV1</option>
+            <option value="kv2">KV2</option>
+            <option value="kv3">KV3</option>
+            <option value="kv4">KV4</option>
+        </select>
+    </label></p>
+    <br>
+    <p><input type="button" value="Tính điểm" id="tinhDiem"></p>
+    <br>
+    <p id="hienThi">tổng điểm của bạn là:</p>
+
+    <script>
+        document.getElementById("tinhDiem").addEventListener("click", function(){
+            let Toan = document.getElementById("diemToan").value
+            let Van = document.getElementById("diemVan").value
+            let Anh = document.getElementById("diemAnh").value
+            let khuVuc = document.getElementById("khuVuc").value
+
+            let diemToan = Number(Toan)
+            let diemVan = Number(Van)
+            let diemAnh = Number(Anh)
+if (diemToan >= 0 && diemToan <=10 && diemVan >=0 && diemVan <=10 && diemAnh >=0 && diemAnh <=10){
+        switch (khuVuc) {
+            case "kv1":
+                let tongDiem = diemToan + diemVan + diemAnh + 0.75
+                document.getElementById("hienThi").innerText = "tổng điểm của bạn là: " + tongDiem
+                break
+
+            case "kv2":
+                let tongDiem2 = diemToan + diemVan + diemAnh + 0.5
+                document.getElementById("hienThi").innerText = "tổng điểm của bạn là: " + tongDiem2
+                break
+
+            case "kv3":
+                let tongDiem3 = diemToan + diemVan + diemAnh + 0.25
+                document.getElementById("hienThi").innerText = "tổng điểm của bạn là: " + tongDiem3
+                break
+
+            case "kv4":
+                let tongDiem4 = diemToan + diemVan + diemAnh
+                document.getElementById("hienThi").innerText = "tổng điểm của bạn là: " + tongDiem4
+                break
+        
+            default:
+                break;
+        }
+    }
+        else {document.getElementById("hienThi").innerText = "điểm số nhập vào không hợp lệ"
+                document.getElementById("hienThi").style.color = "red";}
+        })
+    </script>
+    
+</body>
+</html>

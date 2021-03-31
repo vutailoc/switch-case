@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bài tập kiểm tra giá hoa quả</title>
+</head>
+<body>
+    <label for=""> <select name="hoaQua" id="hoaQua">
+        <option value="oi">Ổi</option>
+        <option value="duaHau">Dưa Hấu</option>
+        <option value="tao">Táo</option>
+        <option value="xoai">Xoài</option>
+        <option value="cam">Cam</option>
+        <option value="chomChom">Chôm Chôm</option>
+        <option value="mangCut">Măng Cụt</option>
+    </select></label>
+    <br>
+    <p id="hienThi"></p>
+    <input type="button" value="xem giá" id="xemGia">
+
+    <script>
+        document.getElementById("xemGia").addEventListener("click", function(){
+           hoaQua = document.getElementById("hoaQua").value
+                switch (hoaQua) {
+                    case "oi": 
+                            document.getElementById("hienThi").innerText = "20000 VNĐ/kg"        
+                        break
+                    case "duaHau": 
+                            document.getElementById("hienThi").innerText = "20000 VNĐ/kg"
+                        break
+                    case "tao":
+                            document.getElementById("hienThi").innerText = "30000 VNĐ/kg"
+                        break
+                    case "xoai":
+                            document.getElementById("hienThi").innerText = "30000 VNĐ/kg"
+                        break
+                    case "cam":    
+                            document.getElementById("hienThi").innerText = "40000 VNĐ/kg"
+                        break
+                    case "chomChom":
+                            document.getElementById("hienThi").innerText = "40000 VNĐ/kg"
+                        break
+                    case "mangCut":    
+                            document.getElementById("hienThi").innerText ="50000 VNĐ/kg"
+                        break
+                    default:
+                        break;
+                }
+        })
+    </script>
+    
+</body>
+</html>
